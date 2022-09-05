@@ -1,0 +1,58 @@
+
+### register
+POST http://dss.test/api/register HTTP/1.1
+content-type: application/json
+
+{
+    "name": "aung khant",
+    "email": "aung@gmail.com",
+    "password": "password"
+}
+
+### login
+POST http://dss.test/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "aung@gmail.com",
+    "password": "password"
+}
+
+### getPost
+GET http://dss.test/api/getPost HTTP/1.1
+content-type: application/json
+Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+
+{
+
+}
+
+### createPost
+POST http://dss.test/api/post HTTP/1.1
+content-type: application/json
+Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+
+{
+    "title" : "lorem",
+    "body" : "lorem ipsum sit"
+}
+
+### updatePost
+PATCH  http://dss.test/api/post/update/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+
+{
+    "title" : "lorem 222",
+    "body" : "lorem ipsum sit"
+}
+### deletePost
+DELETE http://dss.test/api/post/delete/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+
+{
+    "title" : "lorem 222",
+    "body" : "lorem ipsum sit"
+}
+

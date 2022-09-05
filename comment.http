@@ -1,0 +1,10 @@
+### createPost
+POST http://dss.test/api/comment HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+
+{
+    "body" : "",
+    "post_id" : "2"
+}
