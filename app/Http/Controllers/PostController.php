@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+
+    public function allPosts() {
+        return Post::paginate(20);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -56,7 +60,14 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $comments = $post->comments;
+        $totalsComment = [];
+        foreach($comments as $comment) {
+            $comment->replies = $comment->replies;
+            array_push($totalsComment, $comment);
+        }
+        $post->comments = $totalsComment;
+        return $post;
     }
 
     /**

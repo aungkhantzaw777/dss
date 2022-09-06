@@ -1,0 +1,9 @@
+
+POST http://dss.test/api/post HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer 4|wTNSfYlSrW4OjaqP5hRaZxjObhjU1GefiFVThfWJ
+
+{
+    
+}

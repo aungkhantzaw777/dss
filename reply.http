@@ -2,9 +2,9 @@
 POST http://dss.test/api/reply HTTP/1.1
 content-type: application/json
 Accept: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Authorization: Bearer 5|wA5F0WzCmyOM9wAEQqPuwbX71aPKq6olS0Q7DD8J
 
 {
-    "body" : "lorem ipusm",
+    "body" : "this is reply for comment id 1",
     "comment_id" : "1"
 }

@@ -1,10 +1,38 @@
-### createPost
+### login another user
+POST http://dss.test/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "kyaw@gmail.com",
+    "password": "password"
+}
+
+
+### createComment
 POST http://dss.test/api/comment HTTP/1.1
 content-type: application/json
 Accept: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Authorization: Bearer 4|wTNSfYlSrW4OjaqP5hRaZxjObhjU1GefiFVThfWJ
 
 {
-    "body" : "",
-    "post_id" : "2"
+    "body" : "lorem ipsum sit",
+    "post_id" : "1"
+}
+### posts
+GET http://dss.test/api/posts HTTP/1.1
+content-type: application/json
+Accept: application/json
+# Authorization: Bearer 4|wTNSfYlSrW4OjaqP5hRaZxjObhjU1GefiFVThfWJ
+
+{
+    
+}
+### showPost
+GET http://dss.test/api/post/1 HTTP/1.1
+content-type: application/json
+Accept: application/json
+# Authorization: Bearer 4|wTNSfYlSrW4OjaqP5hRaZxjObhjU1GefiFVThfWJ
+
+{
+    
 }

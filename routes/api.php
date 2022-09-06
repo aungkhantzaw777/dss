@@ -21,11 +21,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'createUser']);
 Route::post('/login', [AuthController::class, 'loginUser'])->name('postLogin');
+Route::get('/posts',[PostController::class, 'allPosts']);
+Route::get('/post/{post}', [PostController::class, 'show']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/getPost', [PostController::class, 'index']);
     Route::patch('/post/update/{post}', [PostController::class, 'update']);
     Route::post('/post', [PostController::class, 'store']);
-    Route::get('/getPost', [PostController::class, 'index']);
     Route::delete('/post/delete/{post}', [PostController::class, 'destroy']);
 
     # comment

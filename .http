@@ -2,10 +2,11 @@
 ### register
 POST http://dss.test/api/register HTTP/1.1
 content-type: application/json
+Accept: application/json
 
 {
-    "name": "aung khant",
-    "email": "aung@gmail.com",
+    "name": "aungkyaw",
+    "email": "kyaw@gmail.com",
     "password": "password"
 }
 
@@ -21,7 +22,9 @@ content-type: application/json
 ### getPost
 GET http://dss.test/api/getPost HTTP/1.1
 content-type: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Authorization: Bearer 3|CU48FSB1rrlSbk0XTmMCGbYsmc0CFqFnckLqrtjs
+Accept: application/json
+
 
 {
 
@@ -30,7 +33,9 @@ Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
 ### createPost
 POST http://dss.test/api/post HTTP/1.1
 content-type: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Accept: application/json
+Authorization: Bearer 3|CU48FSB1rrlSbk0XTmMCGbYsmc0CFqFnckLqrtjs
+
 
 {
     "title" : "lorem",
@@ -40,7 +45,8 @@ Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
 ### updatePost
 PATCH  http://dss.test/api/post/update/1 HTTP/1.1
 content-type: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Accept: application/json
+Authorization: Bearer 3|CU48FSB1rrlSbk0XTmMCGbYsmc0CFqFnckLqrtjs
 
 {
     "title" : "lorem 222",
@@ -49,7 +55,8 @@ Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
 ### deletePost
 DELETE http://dss.test/api/post/delete/1 HTTP/1.1
 content-type: application/json
-Authorization: Bearer 6|wh452g1QA7pEid4KI9ucdR2onmLAExkHs5Lu0c26
+Accept: application/json
+Authorization: Bearer 3|CU48FSB1rrlSbk0XTmMCGbYsmc0CFqFnckLqrtjs
 
 {
     "title" : "lorem 222",
