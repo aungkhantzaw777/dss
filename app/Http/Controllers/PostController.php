@@ -11,7 +11,9 @@ class PostController extends Controller
 {
 
     public function allPosts() {
-        return Post::paginate(20);
+        $posts = Post::with('comments.replies')->get();
+        
+        return $posts;
     }
     /**
      * Display a listing of the resource.
