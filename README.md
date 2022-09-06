@@ -8,10 +8,27 @@ create a database
 ```
 composer install
 ```
-
+```
+php artisan migrate
+```
+for linux user and mac
+```
+cp .env .env.example
+```
+for windows user
+```
+copy .env.example .env
+```
 ```
 php artisan key:generate
 ```
+edit .env file
+```
+DB_DATABASE={databasename}
+DB_USERNAME={username}
+DB_PASSWORD={password}
+```
+now migrate database
 ```
 php artisan migrate
 ```
