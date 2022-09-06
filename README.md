@@ -1,64 +1,154 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## About project
+Back End Rest api for blog
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## setup 
+create a database
+```
+composer install
+```
+```
+php artisan migrate
+```
+for linux user and mac
+```
+cp .env .env.example
+```
+for windows user
+```
+copy .env.example .env
+```
+generate application key
+```
+php artisan key:generate
+```
+edit .env file
+```
+DB_DATABASE={databasename}
+DB_USERNAME={username}
+DB_PASSWORD={password}
+```
+now migrate database
+```
+php artisan migrate
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# REST Api for this project
+### Register
+```
+POST http://{yourdomain}/api/register HTTP/1.1
+content-type: application/json
+Accept: application/json
 
-## Learning Laravel
+{
+    "name": "testUser1",
+    "email": "testUser@gmail.com",
+    "password": "password"
+}
+```
+### Login User
+```
+POST http://{yourdomain}/api/login HTTP/1.1
+content-type: application/json
+Accept: application/json
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+{
+    "email": "aung@gmail.com",
+    "password": "password"
+}
+```
+This request will response Token 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Create New Post
+```
+POST http://{yourdomain}/api/post HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer xxx
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+{
+    "title" : "lorem",
+    "body" : "lorem ipsum sit"
+}
+```
+### update post
 
-### Premium Partners
+```
+PATCH http://{yourdomain}/api/post/update/1 HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer xxx
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+{
+    "title" : "lorem 222",
+    "body" : "lorem ipsum sit"
+}
 
-## Contributing
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### delete a post
 
-## Code of Conduct
+```
+DELETE http://{yourdoamin}/api/post/delete/1 HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer xxx
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+{
+    "title" : "lorem 222",
+    "body" : "lorem ipsum sit"
+}
+```
+### get User for Auth User
+```
+GET http://{yourdomain}/api/getPost HTTP/1.1
+content-type: application/json
+Authorization: Bearer xxx
+Accept: application/json
 
-## Security Vulnerabilities
+```
+### Comment a post
+```
+POST http://{yourdomain}/api/comment HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer xxx
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+{
+    "body" : "lorem ipsum sit",
+    "post_id" : {postID}
+}
+```
+### get all post
+```
+GET http://{yourdomain}/api/posts HTTP/1.1
+content-type: application/json
+Accept: application/json
+```
 
-## License
+### show a post
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+GET http://{yourdomain}/api/post/1 HTTP/1.1
+content-type: application/json
+Accept: application/json
+```
+
+### reply a comment
+```
+POST http://{yourdomain}/api/reply HTTP/1.1
+content-type: application/json
+Accept: application/json
+Authorization: Bearer xxx
+
+{
+    "body" : "this is reply for comment",
+    "comment_id" : {commentId}
+}
+```
+
+
+
