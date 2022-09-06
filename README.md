@@ -36,7 +36,7 @@ php artisan migrate
 
 
 # REST Api for this project
-### Register User
+### Register
 ```
 POST http://{yourdomain}/api/register HTTP/1.1
 content-type: application/json
