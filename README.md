@@ -138,6 +138,7 @@ Accept: application/json
 ```
 
 ### reply a comment
+```
 POST http://{yourdomain}/api/reply HTTP/1.1
 content-type: application/json
 Accept: application/json
@@ -147,7 +148,7 @@ Authorization: Bearer xxx
     "body" : "this is reply for comment",
     "comment_id" : {commentId}
 }
-
+```
 
 
 
