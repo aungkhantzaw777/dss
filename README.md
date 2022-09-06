@@ -19,6 +19,7 @@ for windows user
 ```
 copy .env.example .env
 ```
+generate application key
 ```
 php artisan key:generate
 ```
